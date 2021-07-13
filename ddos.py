@@ -1,3 +1,4 @@
+#!/usr/local/bin/python
 from pyfiglet import Figlet
 from color import colored
 import requests, os, sys, curses, time
