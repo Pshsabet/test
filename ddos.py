@@ -31,7 +31,7 @@ def site_seener(window):
 		requests.get(url)
 		number += 1
 		curses.init_pair(2, 47, curses.COLOR_BLACK)
-		window.addstr(10, 10, f'site open {number}/{count}' + "   " +next(spinner), curses.color_pair(2))
+		window.addstr(0, 0, f'site open {number}/{count}' + "   " +next(spinner), curses.color_pair(2))
 		window.refresh()
 		time.sleep(delay)
 		if number == count:
@@ -43,18 +43,18 @@ def site_seener(window):
 
 
 ################## backend #####################
-print(colored("sdfsd", color='green'))
-print(colored("sdfsd", color='Lgreen'))
-
+w = welcome_text.renderText('welcome')
 ################## frontend ####################
-
+print(w)
 while True:
-	print("1 = DDOS 2 = Site Seener 3 = exit")
-	start_app = input("Choose Of Them: ")
+	print(colored("1 = DDOS 2 = Site Seener 3 = exit", color='Lgreen'))
+	print(colored('Choose Of Them: ', color='Lgreen'),end='')
+	start_app = input()
 	if start_app == "1":
 		while True:
 			try:
-				url = input('enter site link: ')
+				print(colored('enter site link: ', color='Lgreen'),end='')
+				url = input()
 				requests.get(url)
 				break
 			except:
@@ -68,20 +68,23 @@ while True:
 	elif start_app == "2":
 		while True:
 			try:
-				url = input('enter site link: ')
+				print(colored('enter site link: ', color='Lgreen'),end='')
+				url = input()
 				requests.get(url)
 				break
 			except:
 				print('url is not valid!')
 		while True:
 			try:
-				count = int(input("enter amount of seen: "))
+				print(colored('enter amount of seen: ', color='Lgreen'),end='')
+				count = int(input())
 				break
 			except:
 				print("enter integer vlue")
 		while True:
 			try:
-				delay = float(input('enter time of delay per open site: '))
+				print(colored('enter time of delay per open site: ', color='Lgreen'),end='')
+				delay = float(input())
 				break
 			except:
 				print("enter integer vlue")
