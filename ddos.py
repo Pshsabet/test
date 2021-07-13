@@ -1,4 +1,5 @@
 #!/usr/local/bin/python
+# -*- coding: utf-8 -*-
 from pyfiglet import Figlet
 from color import colored
 import requests, os, sys, curses, time
